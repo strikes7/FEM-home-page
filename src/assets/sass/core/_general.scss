@@ -1,1 +1,14 @@
 @use "../abstract/" as *;
+
+body {
+  margin: 0;
+  padding: 1.5rem 1rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  font-family: $ff-primary;
+  background-color: $clr-neutral-100;
+}
+
+a {
+  text-decoration: none;
+}

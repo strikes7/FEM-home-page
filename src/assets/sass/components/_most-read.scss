@@ -1,1 +1,44 @@
 @use "../abstract/" as *;
+
+.most-read {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__news {
+    &__image {
+      height: 8.125rem;
+      width: auto;
+      float: left;
+      margin-inline-end: 1.5rem;
+    }
+
+    &__position {
+      font-size: $fs-700;
+      font-weight: 700;
+      color: $clr-neutral-200;
+    }
+
+    & > a {
+      color: $clr-neutral-400;
+      transition: color 0.2s ease-in-out;
+      outline-offset: 4px;
+
+      &:hover,
+      &:focus {
+        color: $clr-red;
+      }
+    }
+    &__title {
+      font-size: $fs-400;
+      margin-block: 0.5rem;
+    }
+
+    &__extract {
+      font-size: $fs-300;
+      margin-block: 0;
+      color: $clr-neutral-300;
+      line-height: 1.6;
+    }
+  }
+}

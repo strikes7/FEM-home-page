@@ -1,1 +1,14 @@
 @use "../abstract/" as *;
+
+.logo {
+  display: block;
+  margin-block-end: 1.875rem;
+  width: min-content;
+  outline-offset: 4px;
+
+  img {
+    width: auto;
+    vertical-align: middle;
+    height: toRem(30);
+  }
+}
