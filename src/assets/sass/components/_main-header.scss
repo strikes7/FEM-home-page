@@ -1,7 +1,9 @@
 @use "../abstract/" as *;
+.main-header {
+  display: flex;
+}
 
 .logo {
-  display: block;
   margin-block-end: 1.875rem;
   width: min-content;
   outline-offset: 4px;

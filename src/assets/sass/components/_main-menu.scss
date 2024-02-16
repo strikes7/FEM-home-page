@@ -1,5 +1,52 @@
 @use "../abstract/" as *;
-
+.main-menu-wrapper {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(
+    90deg,
+    $clr-neutral-400-semi 0%,
+    $clr-neutral-400-semi 30%,
+    $clr-neutral-100 30%
+  );
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+#main-menu__open-button[aria-expanded="true"] + .main-menu-wrapper {
+  transform: translateY(0%);
+}
 .main-menu {
-  display: none;
+  margin-inline: auto 0;
+  &__items {
+    height: 100%;
+    margin-block-start: 0;
+    margin-inline-start: 38%;
+    list-style-type: none;
+    padding-inline-start: 0;
+  }
+
+  &__item {
+    width: fit-content;
+    display: block;
+    padding-block: 0.75rem;
+    font-size: $fs-500;
+    color: $clr-neutral-400;
+    outline-offset: 4px;
+    transition: color 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: $clr-red;
+    }
+  }
+}
+
+#main-menu__close-button {
+  @include openCloseButton;
+  margin: 1.5625em 1.375rem 5rem auto;
+  width: toRem(32);
+}
+
+#main-menu__open-button {
+  @include openCloseButton;
+  height: toRem(30);
 }
