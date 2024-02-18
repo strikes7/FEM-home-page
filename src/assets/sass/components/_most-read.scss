@@ -6,11 +6,12 @@
   gap: 2rem;
 
   &__news {
+    display: flex;
+    gap: 1.5rem;
+
     &__image {
       height: 8.125rem;
       width: auto;
-      float: left;
-      margin-inline-end: 1.5rem;
     }
 
     &__position {
@@ -19,7 +20,7 @@
       color: $clr-neutral-200;
     }
 
-    & > a {
+    & > div > a {
       color: $clr-neutral-400;
       transition: color 0.2s ease-in-out;
       outline-offset: 4px;
@@ -32,6 +33,7 @@
     &__title {
       font-size: $fs-400;
       margin-block: 0.5rem;
+      width: fit-content;
     }
 
     &__extract {

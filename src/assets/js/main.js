@@ -1,17 +1,36 @@
-window.onload = initialSetup();
+const media = window.matchMedia("(width < 50em)");
+window.onload = initialSetup;
 
 function initialSetup() {
-  selectElements();
+  setupElements();
+  setupMainNavBar(media);
 }
 
-function selectElements() {
+function setupMainNavBar(event) {
+  const menu = document.getElementById("main-menu-wrapper");
+  if (event.matches) {
+    menu.setAttribute("inert", "");
+  } else {
+    menu.removeAttribute("inert");
+  }
+}
+
+function setupElements() {
   const openMenu = document.getElementById("main-menu__open-button");
+  const menu = document.getElementById("main-menu-wrapper");
+  const closeMenu = document.getElementById("main-menu__close-button");
+
   openMenu.addEventListener("click", () => {
     openMenu.setAttribute("aria-expanded", true);
+    menu.removeAttribute("inert");
   });
 
-  const closeMenu = document.getElementById("main-menu__close-button");
   closeMenu.addEventListener("click", () => {
     openMenu.setAttribute("aria-expanded", false);
+    menu.setAttribute("inert", "");
+  });
+
+  media.addEventListener("change", () => {
+    setupMainNavBar(media);
   });
 }

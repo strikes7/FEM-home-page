@@ -175,28 +175,31 @@ a {
   flex-direction: column;
   gap: 2rem;
 }
+.most-read__news {
+  display: flex;
+  gap: 1.5rem;
+}
 .most-read__news__image {
   height: 8.125rem;
   width: auto;
-  float: left;
-  margin-inline-end: 1.5rem;
 }
 .most-read__news__position {
   font-size: 2rem;
   font-weight: 700;
   color: hsl(233, 8%, 79%);
 }
-.most-read__news > a {
+.most-read__news > div > a {
   color: hsl(240, 100%, 5%);
   transition: color 0.2s ease-in-out;
   outline-offset: 4px;
 }
-.most-read__news > a:hover, .most-read__news > a:focus {
+.most-read__news > div > a:hover, .most-read__news > div > a:focus {
   color: hsl(5, 85%, 63%);
 }
 .most-read__news__title {
   font-size: 1rem;
   margin-block: 0.5rem;
+  width: fit-content;
 }
 .most-read__news__extract {
   font-size: 0.9rem;
