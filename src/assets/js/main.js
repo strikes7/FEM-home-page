@@ -7,10 +7,14 @@ function initialSetup() {
 }
 
 function setupMainNavBar(event) {
+  const openMenu = document.getElementById("main-menu__open-button");
   const menu = document.getElementById("main-menu-wrapper");
   if (event.matches) {
+    openMenu.setAttribute("aria-expanded", false);
     menu.setAttribute("inert", "");
+    menu.style.transition = "none";
   } else {
+    openMenu.setAttribute("aria-expanded", true);
     menu.removeAttribute("inert");
   }
 }
@@ -23,6 +27,7 @@ function setupElements() {
   openMenu.addEventListener("click", () => {
     openMenu.setAttribute("aria-expanded", true);
     menu.removeAttribute("inert");
+    menu.removeAttribute("style");
   });
 
   closeMenu.addEventListener("click", () => {

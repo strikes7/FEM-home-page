@@ -11,9 +11,11 @@
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
 }
+
 #main-menu__open-button[aria-expanded="true"] + .main-menu-wrapper {
   transform: translateY(0%);
 }
+
 .main-menu {
   margin-inline: auto 0;
   &__items {
