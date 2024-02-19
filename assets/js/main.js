@@ -33,6 +33,9 @@ function setupElements() {
   closeMenu.addEventListener("click", () => {
     openMenu.setAttribute("aria-expanded", false);
     menu.setAttribute("inert", "");
+    setTimeout(() => {
+      menu.style.transition = "none";
+    }, 300);
   });
 
   media.addEventListener("change", () => {
